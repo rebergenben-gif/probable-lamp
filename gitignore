@@ -1,0 +1,4 @@
+# Service account (nooit committen)
+serviceAccountKey.json
+node_modules/
+.env
