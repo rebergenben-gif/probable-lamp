@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mijn Webshop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-semibold">Mijn Webshop</h1>
+      <nav class="flex items-center gap-4">
+        <a href="admin.html" class="text-sm text-gray-600 hover:underline">Admin</a>
+        <button id="cartToggle" class="relative">
+          🛒 <span id="cartCount" class="ml-1 text-sm">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold mb-2">Producten</h2>
+      <p class="text-sm text-gray-600">Bekijk onze selectie</p>
+    </section>
+
+    <section id="products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+  </main>
+
+  <!-- winkelwagen modal -->
+  <div id="cartModal" class="fixed inset-0 bg-black/40 hidden items-end sm:items-center justify-center p-4">
+    <div class="bg-white rounded-t-2xl sm:rounded-2xl w-full sm:w-3/5 max-h-[80vh] overflow-auto p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-semibold">Winkelwagen</h3>
+        <button id="closeCart" class="text-gray-600">✕</button>
+      </div>
+      <div id="cartItems" class="space-y-4">Leeg</div>
+      <div class="mt-6 flex justify-between items-center">
+        <div class="text-lg font-semibold">Totaal: €<span id="cartTotal">0.00</span></div>
+        <div>
+          <button id="clearCart" class="px-4 py-2 bg-red-500 text-white rounded mr-2">Leegmaken</button>
+          <button id="checkout" class="px-4 py-2 bg-green-600 text-white rounded">Afrekenen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
